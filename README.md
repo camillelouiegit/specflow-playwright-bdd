@@ -2,7 +2,7 @@
 
 
 ## Getting started
-1. Clone repo git@git.planittesting.com:automation/nz-hub-and-training/specflow-playwright-bdd.git
+1. Clone repo https://github.com/camillelouiegit/specflow-playwright-bdd.git
 2. Install Visual Studio
 3. Install Specflow for Visual Studio extension
 4. Install Playwright extension Tools > NuGet Package Manager > Manage NuGet Packages for Solution
