@@ -19,7 +19,10 @@ pwsh bin/Debug/netX/playwright.ps1 install
 6. 
 ```
 dotnet test .\specflow-playwright.sln
-
+```
+ Run a specific test using @tags
+```
+dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
 ```
 
 ## Generate Report - Livingdocs
