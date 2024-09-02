@@ -29,6 +29,5 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - script: |
-    cd specflow-playwright-bdd
     pwsh bin\Release\net6.0\playwright.ps1 install
     dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
