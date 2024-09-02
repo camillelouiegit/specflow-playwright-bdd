@@ -30,9 +30,10 @@ steps:
 
 - script: |
     pwsh bin\Release\net6.0\playwright.ps1 install
-    dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
     dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
-    livingdoc test-assembly bin\Release\net6.0\SpecflowPlaywright.dll -t TestExecution.json
+    dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
+    cd bin\Release\net6.0\SpecflowPlaywright.dll
+    livingdoc test-assembly SpecflowPlaywright.dll -t TestExecution.json
 
 - task: DownloadBuildArtifacts@1
   inputs:
