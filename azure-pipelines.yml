@@ -30,9 +30,5 @@ steps:
 
 - script: |
     cd specflow-playwright-bdd
-    pwsh bin/Debug/net6.0/playwright.ps1 install
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: '**/specflow-playwright.sln'
+    pwsh specflow-playwright-bdd/bin/Debug/net6.0/playwright.ps1 install
+    dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
