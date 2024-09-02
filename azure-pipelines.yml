@@ -28,7 +28,7 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- script: |
-    dotnet tool install --global SpecFlow.Plus.License
-    dotnet add package Microsoft.Playwright.NUnit
-    dotnet test .\specflow-playwright.sln
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '**/specflow-playwright.sln'
