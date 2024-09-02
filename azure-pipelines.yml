@@ -30,9 +30,5 @@ steps:
 
 - script: |
     cd specflow-playwright-bdd
-    dotnet add package Microsoft.Playwright.NUnit
-    - task: PowerShell@2
-      inputs:
-        filePath: 'specflow-playwright-bdd/bin/Debug/net6.0/playwright.ps1 install'
+    pwsh specflow-playwright-bdd/bin/Release/net6.0/playwright.ps1 install
     dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
-
