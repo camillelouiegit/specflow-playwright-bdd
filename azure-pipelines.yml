@@ -30,7 +30,7 @@ steps:
 
 - script: |
     cd specflow-playwright-bdd
-    pwsh bin/Debug/netX/playwright.ps1 install
+    pwsh bin/Debug/net6.0/playwright.ps1 install
 
 - task: DotNetCoreCLI@2
   inputs:
