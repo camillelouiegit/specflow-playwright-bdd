@@ -30,4 +30,15 @@ steps:
 
 - script: |
     pwsh bin\Release\net6.0\playwright.ps1 install
+    dotnet test .\specflow-playwright.sln
     dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
+    dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+    livingdoc test-assembly bin\Release\net6.0\SpecflowPlaywright.dll -t bin\Release\net6.0\TestExecution.json --output Report/
+    start Report/LivingDoc.html
+
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'artifacts'
+    downloadPath: '$(System.ArtifactsDirectory)'
