@@ -30,9 +30,9 @@ steps:
 
 - script: |
     pwsh bin\Release\net6.0\playwright.ps1 install
+    dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
     dotnet test .\specflow-playwright.sln --filter "TestCategory=ValidLogin"
     cd bin\Debug\net6.0\
-    dotnet tool install SpecFlow.Plus.LivingDoc.CLI
     livingdoc test-assembly SpecflowPlaywright.dll -t TestExecution.json
   displayName: 'RunTestCLI'
 
