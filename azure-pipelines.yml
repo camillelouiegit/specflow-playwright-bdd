@@ -34,7 +34,6 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - script: |
-    cd specflow-playwright
     dotnet tool install --global SpecFlow.Plus.License
     dotnet add package Microsoft.Playwright.NUnit
     pwsh bin/Debug/netX/playwright.ps1 install
