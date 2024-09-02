@@ -36,9 +36,7 @@ steps:
     livingdoc test-assembly SpecflowPlaywright.dll -t TestExecution.json
   displayName: 'RunTestCLI'
 
-- task: DownloadBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'artifacts'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    targetPath: $(System.DefaultWorkingDirectory)/bin/Debug/
+    artifactName: net6.0
